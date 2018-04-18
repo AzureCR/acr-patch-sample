@@ -1,0 +1,39 @@
+apiVersion: apps/{{ .Values.apiVersion }}
+kind: Deployment
+metadata:
+  name: acr-patch-api
+  labels:
+    app: {{ template "jenga.name" . }}
+    chart: {{ template "jenga.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}  
+spec: 
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: acr-patch-api
+  template: 
+    metadata:
+     labels:
+        app: acr-patch-api
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: acr-patch-api
+        image: azurecr/acr-patch-sample-api
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: acr-patch-api-svc
+spec:
+    ports:
+        - port: 80
+          protocol: TCP
+          targetPort: 80
+    selector:
+        app: acr-patch-api
+    type: ClusterIP
