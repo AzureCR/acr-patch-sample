@@ -1,2 +1,14 @@
 apiVersion: v1beta2
 replicaCount: 1
+
+web:
+  #host: .cloudapp.azure.com
+  image: azurecr/acr-patch-sample-web:v1
+
+api:
+  image: azurecr/acr-patch-sample-api
+
+imageCredentials:
+  registry: registry
+  username: username
+  password: password

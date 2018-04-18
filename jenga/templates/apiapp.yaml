@@ -20,10 +20,12 @@ spec:
     spec:
       containers:
       - name: acr-patch-api
-        image: azurecr/acr-patch-sample-api
+        image: {{ .Values.api.image }}
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: app-registry-secret
 ---
 apiVersion: v1
 kind: Service
