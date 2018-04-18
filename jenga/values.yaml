@@ -1,0 +1,2 @@
+apiVersion: v1beta2
+replicaCount: 1
