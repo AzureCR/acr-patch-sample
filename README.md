@@ -12,9 +12,9 @@ This repo contains a simple 2 container app in the following model
 
 These are used to generate the web app and the API app. 
 
-[AzureCR/acr-patch-sample-web](github.com/AzureCR/acr-patch-sample-web)
+[AzureCR/acr-patch-sample-web](/AzureCR/acr-patch-sample-web)
 
-[AzureCR/acr-patch-sample-api](github.com/AzureCR/acr-patch-sample-api)
+[AzureCR/acr-patch-sample-api](/AzureCR/acr-patch-sample-api)
 
 TODO:
 1. Helm ingress [template](jenga/templates/webapp.yaml) uses a fixed host and requires parameterization. 
