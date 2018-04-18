@@ -27,8 +27,6 @@ spec:
         env:
         - name: BACKEND
           value: acr-patch-api-svc
-      imagePullSecrets:
-        - name: app-registry-secret
 ---
 apiVersion: v1
 kind: Service
